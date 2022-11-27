@@ -37,11 +37,36 @@
               Mobile
             </button>
           </div>
-          <div class="b2" v-if="monthlySelected" :class="{ selectedPlanText: planSelected == 'mobile' }">100</div>
-          <div class="b2" v-else :class="{ selectedPlanText: planSelected == 'mobile' }">1000</div>
-          <div class="b3" :class="{ selectedPlanText: planSelected == 'mobile' }">Good</div>
-          <div class="b4" :class="{ selectedPlanText: planSelected == 'mobile' }">480p</div>
-          <div class="b5" :class="{ selectedPlanText: planSelected == 'mobile' }">
+          <div
+            class="b2"
+            v-if="monthlySelected"
+            :class="{ selectedPlanText: planSelected == 'mobile' }"
+          >
+            100
+          </div>
+          <div
+            class="b2"
+            v-else
+            :class="{ selectedPlanText: planSelected == 'mobile' }"
+          >
+            1000
+          </div>
+          <div
+            class="b3"
+            :class="{ selectedPlanText: planSelected == 'mobile' }"
+          >
+            Good
+          </div>
+          <div
+            class="b4"
+            :class="{ selectedPlanText: planSelected == 'mobile' }"
+          >
+            480p
+          </div>
+          <div
+            class="b5"
+            :class="{ selectedPlanText: planSelected == 'mobile' }"
+          >
             <p>Phone</p>
             <p>Tablet</p>
             <p>&nbsp;</p>
@@ -58,11 +83,36 @@
               Basic
             </button>
           </div>
-          <div class="b2" v-if="monthlySelected" :class="{ selectedPlanText: planSelected == 'basic' }">200</div>
-          <div class="b2" v-else :class="{ selectedPlanText: planSelected == 'basic' }">2000</div>
-          <div class="b3" :class="{ selectedPlanText: planSelected == 'basic' }">Good</div>
-          <div class="b4" :class="{ selectedPlanText: planSelected == 'basic' }">480p</div>
-          <div class="b5" :class="{ selectedPlanText: planSelected == 'basic' }">
+          <div
+            class="b2"
+            v-if="monthlySelected"
+            :class="{ selectedPlanText: planSelected == 'basic' }"
+          >
+            200
+          </div>
+          <div
+            class="b2"
+            v-else
+            :class="{ selectedPlanText: planSelected == 'basic' }"
+          >
+            2000
+          </div>
+          <div
+            class="b3"
+            :class="{ selectedPlanText: planSelected == 'basic' }"
+          >
+            Good
+          </div>
+          <div
+            class="b4"
+            :class="{ selectedPlanText: planSelected == 'basic' }"
+          >
+            480p
+          </div>
+          <div
+            class="b5"
+            :class="{ selectedPlanText: planSelected == 'basic' }"
+          >
             <p>Phone</p>
             <p>Tablet</p>
             <p>Computer</p>
@@ -79,11 +129,36 @@
               Standard
             </button>
           </div>
-          <div class="b2" v-if="monthlySelected" :class="{ selectedPlanText: planSelected == 'standard' }">500</div>
-          <div class="b2" v-else :class="{ selectedPlanText: planSelected == 'standard' }">5000</div>
-          <div class="b3" :class="{ selectedPlanText: planSelected == 'standard' }">Better</div>
-          <div class="b4" :class="{ selectedPlanText: planSelected == 'standard' }">1080p</div>
-          <div class="b5" :class="{ selectedPlanText: planSelected == 'standard' }">
+          <div
+            class="b2"
+            v-if="monthlySelected"
+            :class="{ selectedPlanText: planSelected == 'standard' }"
+          >
+            500
+          </div>
+          <div
+            class="b2"
+            v-else
+            :class="{ selectedPlanText: planSelected == 'standard' }"
+          >
+            5000
+          </div>
+          <div
+            class="b3"
+            :class="{ selectedPlanText: planSelected == 'standard' }"
+          >
+            Better
+          </div>
+          <div
+            class="b4"
+            :class="{ selectedPlanText: planSelected == 'standard' }"
+          >
+            1080p
+          </div>
+          <div
+            class="b5"
+            :class="{ selectedPlanText: planSelected == 'standard' }"
+          >
             <p>Phone</p>
             <p>Tablet</p>
             <p>Computer</p>
@@ -100,11 +175,36 @@
               Premium
             </button>
           </div>
-          <div class="b2" v-if="monthlySelected" :class="{ selectedPlanText: planSelected == 'premium' }">700</div>
-          <div class="b2" v-else :class="{ selectedPlanText: planSelected == 'premium' }">7000</div>
-          <div class="b3" :class="{ selectedPlanText: planSelected == 'premium' }">Best</div>
-          <div class="b4" :class="{ selectedPlanText: planSelected == 'premium' }">4K+HDR</div>
-          <div class="b5" :class="{ selectedPlanText: planSelected == 'premium' }">
+          <div
+            class="b2"
+            v-if="monthlySelected"
+            :class="{ selectedPlanText: planSelected == 'premium' }"
+          >
+            700
+          </div>
+          <div
+            class="b2"
+            v-else
+            :class="{ selectedPlanText: planSelected == 'premium' }"
+          >
+            7000
+          </div>
+          <div
+            class="b3"
+            :class="{ selectedPlanText: planSelected == 'premium' }"
+          >
+            Best
+          </div>
+          <div
+            class="b4"
+            :class="{ selectedPlanText: planSelected == 'premium' }"
+          >
+            4K+HDR
+          </div>
+          <div
+            class="b5"
+            :class="{ selectedPlanText: planSelected == 'premium' }"
+          >
             <p>Phone</p>
             <p>Tablet</p>
             <p>Computer</p>
@@ -113,19 +213,41 @@
         </div>
       </div>
     </div>
-    <button class="lastBtn">Next</button>
+    <button class="lastBtn" @click="getPlan" :disabled="isDisabled" :class="{lastBtnDisabled: isDisabled}">Next</button>
   </div>
 </template>
 
 <script>
 export default {
+  props: ["userDetails"],
   data() {
     return {
       monthlySelected: true,
       planSelected: "",
     };
   },
-  methods: {},
+  methods: {
+    getPlan() {
+      try {
+        let timePeriod = this.monthlySelected ? "monthly" : "yearly";
+        // const { serverTimestamp } = this.$fire.firestore.FieldValue;
+        this.$fire.firestore.collection("plans").doc(this.userDetails.uid).set({
+          timePeriod: timePeriod,
+          type: this.planSelected,
+          createdOn: Date.now(),
+        });
+      } catch (err) {
+        alert(err);
+      }
+      this.$emit('planUpdate')
+    },
+  },
+  computed: {
+      isDisabled() {
+        // you can  check your form is filled or not here.
+        return this.planSelected.length == 0
+      },
+    },
 };
 </script>
 
@@ -176,10 +298,11 @@ export default {
   justify-content: center;
   align-items: center;
   font-size: 1.1rem;
-
 }
 
-.b2, .b3, .b4 {
+.b2,
+.b3,
+.b4 {
   height: 10%;
   display: flex;
   flex-direction: column;
@@ -245,5 +368,8 @@ export default {
   border: none;
   border-radius: 10px;
   margin-bottom: 20px;
+}
+.lastBtnDisabled {
+  background-color: #7893bc;
 }
 </style>

@@ -53,6 +53,7 @@ export default {
           measurementId: "G-37NE0L0YTV"
         },
         services: {
+          firestore: true,
           auth: true
           // auth: {
           //   persistence: 'local', // default
